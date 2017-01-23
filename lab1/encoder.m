@@ -41,3 +41,6 @@ end
 %figure;
 sign(w)
 plot(1:epoch_total, error);
+xlabel('epoch');
+ylabel('error');
+legend(sprintf('alpha = %.1f, eta=%.3f, epochs=%d', alpha, eta, epoch));

@@ -1,12 +1,12 @@
 close all;
 clear;
 
-n = 25;
+n = 10;
 alpha = 0.9;
 eta = 0.1;
 error = [];
 epoch_total = 1000;
-hidden = 20;
+hidden = 30;
 
 input_x = [-5:1:5]';
 input_y = input_x;
@@ -70,6 +70,9 @@ end
 
 figure;
 plot(1:epoch_total, error);
+xlabel('epoch');
+ylabel('error');
+legend(sprintf('n=%d, hidden=%d, alpha = %.1f, eta=%.3f, epochs=%d', n, hidden, alpha, eta, epoch));
 
 
 % Resultant 
@@ -85,3 +88,4 @@ zz = reshape(out, gridsize, gridsize);
 mesh(input_x, input_y, zz);
 axis([-5 5 -5 5 -0.7 0.7]);
 drawnow;
+legend(sprintf('n=%d, hidden=%d, alpha = %.1f, eta=%.3f, epochs=%d', n, hidden, alpha, eta, epoch));

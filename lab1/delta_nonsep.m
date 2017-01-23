@@ -8,7 +8,7 @@ w = randn(1, 3);
 X = [patterns; ones(1, ndata)];
 
 eta = 0.001;   %recomended: 0.001 
-epoch_total = 100; %recomended: 20
+epoch_total = 20; %recomended: 20
 
 for epoch = 1:epoch_total
     
@@ -28,3 +28,6 @@ for epoch = 1:epoch_total
     drawnow;
 
 end
+
+xlabel('Linear classification');
+legend(sprintf('eta=%.3f, epochs=%d', eta, epoch));
