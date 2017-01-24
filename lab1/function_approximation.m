@@ -1,12 +1,12 @@
 close all;
 clear;
 
-n = 10;
+n = 121;
 alpha = 0.9;
 eta = 0.1;
 error = [];
-epoch_total = 1000;
-hidden = 30;
+epoch_total = 200;
+hidden = 2;
 
 input_x = [-5:1:5]';
 input_y = input_x;
@@ -15,8 +15,6 @@ z = exp(-input_x.*input_x*0.1) * exp(-input_y.*input_y*0.1)' - 0.5;
 ndata = gridsize * gridsize;
 
 mesh( input_x, input_y, z);
-
-%out = [];
 
 targets = reshape(z, 1, ndata);
 [xx, yy] = meshgrid(input_x, input_y);
