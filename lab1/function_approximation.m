@@ -73,7 +73,7 @@ ylabel('error');
 legend(sprintf('n=%d, hidden=%d, alpha = %.1f, eta=%.3f, epochs=%d', n, hidden, alpha, eta, epoch));
 
 
-% Resultant 
+% Resultant function 
 figure;
 
 hin = w * [patterns_original; ones(1, ndata)];
