@@ -4,7 +4,15 @@ close all;
 [xtrain, ytrain]=readxy('ballist',2,2);
 [xtest, ytest]=readxy('balltest',2,2);
 
-units=6;
+B = [0.25 0.25 0.25 0.25];
+A = 1;
+xtrain(:,1) = filter(B,A,xtrain(:,1));
+xtrain(:,2) = filter(B,A,xtrain(:,2));
+
+ytrain(:,1) = filter(B,A,ytrain(:,1));
+ytrain(:,2) = filter(B,A,ytrain(:,2));
+
+units=20;
 data=xtrain;
 vqinit;
 singlewinner=1;
