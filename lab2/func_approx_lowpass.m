@@ -6,11 +6,9 @@ close all;
 
 B = [0.25 0.25 0.25 0.25];
 A = 1;
-xtrain(:,1) = filter(B,A,xtrain(:,1));
-xtrain(:,2) = filter(B,A,xtrain(:,2));
 
-ytrain(:,1) = filter(B,A,ytrain(:,1));
-ytrain(:,2) = filter(B,A,ytrain(:,2));
+xtrain = filter(B,A,xtrain);
+%ytrain = filter(B,A,ytrain);
 
 units=20;
 data=xtrain;
