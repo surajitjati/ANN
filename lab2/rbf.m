@@ -15,7 +15,6 @@ w = Phi \ f;
 y = Phi*w;
 
 rbfplot1(x, y, f, units);
-%subplot(211), hold on, plot(m, zeros(length(m)), 'og');
 
 figure
 

@@ -1,21 +1,15 @@
 clear;
 close all;
-clc;
 
 [xtrain, ytrain]=readxy('ballist',2,2);
 [xtest, ytest]=readxy('balltest',2,2);
 
-
-% coef = 0;
-% xtrain = lowPassFilter(xtrain, coef);
-% xtest = lowPassFilter(xtest, coef);
-
-% Training
-units=20;
+units=6;
 data=xtrain;
 vqinit;
 singlewinner=1;
 emiterb;
+
 figure(1), axis([0 1 0 1]);
 
 Phi=calcPhi(xtrain,m,var);
@@ -35,8 +29,13 @@ Phitest=calcPhi(xtest,m,var);
 ytest1=Phitest*w1;
 ytest2=Phitest*w2;
 
-figure, train1 = xyplot(d1,y1,'train1')
-figure, train2 = xyplot(d2,y2,'train2')
-figure, test1 = xyplot(dtest1,ytest1,'test1')
-figure, test2 = xyplot(dtest2,ytest2,'test2')
+figure
+subplot(2,2,1)
+xyplot(d1,y1,'train1')
+subplot(2,2,2)
+xyplot(d2,y2,'train2')
+subplot(2,2,3)
+xyplot(dtest1,ytest1,'test1')
+subplot(2,2,4)
+xyplot(dtest2,ytest2,'test2')
 
