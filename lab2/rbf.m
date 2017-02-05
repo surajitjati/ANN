@@ -22,7 +22,7 @@ figure
 r = [1];
 units = 1;
 while r(end) > 0.001
-y = computeLeastSquares(x, f, units);
+y = LeastSquares(x, f, units);
 r = [ r max(abs(f - y))];
 units = units + 1;
 end

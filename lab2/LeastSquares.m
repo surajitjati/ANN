@@ -1,4 +1,4 @@
-function [ y ] = computeLeastSquares( x, f, units )
+function [ y ] = LeastSquares( x, f, units )
     global var;
     makerbf;
     Phi = calcPhi(x, m, var);
