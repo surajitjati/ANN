@@ -3,15 +3,12 @@ close all;
 
 [xtrain, ytrain]=readxy('ballist',2,2);
 [xtest, ytest]=readxy('balltest',2,2);
-%plot(xtrain,ytrain)
-B = [0.25 0.25 0.25 0.25];
-%B = [-0.5 0 0.5];
-A = 1;
 
-xtrain = filter(B,A,xtrain);
-ytrain = filter(B,A,ytrain);
+units_list = [4:2:20];
+units=6;
 
-units=20;
+for units = units_list
+    
 data=xtrain;
 vqinit;
 singlewinner=1;
@@ -36,6 +33,7 @@ Phitest=calcPhi(xtest,m,var);
 ytest1=Phitest*w1;
 ytest2=Phitest*w2;
 
+    
 figure
 subplot(2,2,1)
 xyplot(d1,y1,'train1')
@@ -46,3 +44,4 @@ xyplot(dtest1,ytest1,'test1')
 subplot(2,2,4)
 xyplot(dtest2,ytest2,'test2')
 
+end

@@ -6,7 +6,7 @@ data = read('cluster');
 units = 5;
 
 vqinit;
-singlewinner=0;
+singlewinner=1;
 
 emiterb;
 
