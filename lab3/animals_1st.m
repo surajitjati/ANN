@@ -6,7 +6,7 @@ animals;
 epoch = 20;
 eta = 0.2;
 [nbrAnimals, nbrAttrib] = size(props); 
-outputSize = 100;
+outputSize = 30;
 weights = rand(outputSize, 84);
 
 % Training
@@ -48,3 +48,4 @@ end
 
 [dummy, order] = sort(pos);
 animal_order = snames(order)';
+table(animal_order, pos(order),'VariableNames',{'Animal', 'Cluster'})

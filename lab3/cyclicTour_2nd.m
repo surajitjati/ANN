@@ -3,10 +3,10 @@ clear;
 close all;
 
 cities;
-epoch = 5000;
-eta = 0.8;
+epoch = 500;
+eta = 0.2;
 [nbrCity, nbrAttrib] = size(city);
-outputSize = 10;
+outputSize = 15;
 inputSize = 2;
 
 weights = rand(outputSize, inputSize);

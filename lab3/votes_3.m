@@ -28,9 +28,9 @@ for i = 1:epoch
         xWinner = xpos(index);
         yWinner = ypos(index);
         for wx = xWinner-nSize:xWinner+nSize
-            normWx = keepBorder(wx, sSize);
+            normWx = nbghUpdate(wx, sSize);
             for wy = yWinner-nSize:yWinner+nSize
-                normWy = keepBorder(wy, sSize);
+                normWy = nbghUpdate(wy, sSize);
                 normW = (normWx-1)*sSize + normWy;
                 distance = p - weights(normW, :);
                 weights(normW, :) = weights(normW, :) + eta .* distance;
@@ -66,4 +66,14 @@ figure;
 createMpsex;
 s = [mpsex;0];
 image(s(reshape(a,sSize,sSize))+1);
+
+createMpnames;
+
+[dummy, order] = sort(pos);
+%animal_order = snames(order)';
+
+table(mpnames(order), mpparty(order), mpsex(order), ...
+    mpdistrict(order), ...
+    pos(order), ...
+    'VariableNames',{'Name', 'Party','Sex','District','Cluster'})
         
