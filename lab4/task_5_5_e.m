@@ -4,7 +4,7 @@ clc;
 
 numPattern = 300;
 N = 100;
-goodPattern1 =[];
+matchedPattern1 =[];
 
 patterns = sign(0.5+randn(numPattern,N));
 
@@ -18,14 +18,14 @@ for i = 1:numPattern
             matched = matched + 1;
         end
     end
-    goodPattern1 = [goodPattern1 matched*100/i];
-    %goodPattern1 = [goodPattern1 matched];
+    matchedPattern1 = [matchedPattern1 matched*100/i];
+    %matchedPattern1 = [matchedPattern1 matched];
 end
 subplot(1,2,1);
-plot(1:numPattern, goodPattern1);
+plot(1:numPattern, matchedPattern1);
 title('Diag not suppressed')
 
-goodPattern2 =[];
+matchedPattern2 =[];
 
 for i = 1:numPattern
     w = train(patterns(1:i,:));
@@ -38,9 +38,9 @@ for i = 1:numPattern
             matched = matched + 1;
         end
     end
-    goodPattern2 = [goodPattern2 matched*100/i];
-    %goodPattern2 = [goodPattern2 matched];
+    matchedPattern2 = [matchedPattern2 matched*100/i];
+    %matchedPattern2 = [matchedPattern2 matched];
 end
 subplot(1,2,2);
-plot(1:numPattern, goodPattern2);
+plot(1:numPattern, matchedPattern2);
 title('Diag suppressed')
