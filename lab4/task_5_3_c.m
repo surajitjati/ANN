@@ -5,7 +5,9 @@ clc;
 pict;
 patterns = [p1;p2;p3];
 
-w = train(patterns);
+%w = train(patterns);
+N = size(p1,2);
+w = randn(N, N);
 w = .5 * (w + w');
 
 [p11r, iter11, error11, energy11] = recall_update_energy(w, p11, patterns, true);

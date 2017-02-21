@@ -20,6 +20,6 @@ for n = noise
     [p1distr, iter, error] = recall_update(w, p1dist, patterns);
     subplot(3,4,i);
     vis(p1distr);
-    title(sprintf('noise = %d',n));
+    title(sprintf('Added noise = %d',n));
     i = i+1;
 end
