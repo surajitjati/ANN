@@ -5,20 +5,6 @@ clc;
 error = [];
 energy = [];
 
-
-% p1 = sign(randn(1,1024));
-% p2 = sign(randn(1,1024));
-% p3 = sign(randn(1,1024));
-% p4 = sign(randn(1,1024));
-% p5 = sign(randn(1,1024));
-% p6 = sign(randn(1,1024));
-% p7 = sign(randn(1,1024));
-% p8 = sign(randn(1,1024));
-% p9 = sign(randn(1,1024));
-% 
-% patterns = [p1; p2; p3; p4; p5; p6; p7; p8; p9];
-%p1dist = flip(p1, 100);
-
 numPattern = 150;
 patterns = sign(randn(numPattern,1024));
 
