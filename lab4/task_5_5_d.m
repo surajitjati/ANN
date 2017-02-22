@@ -6,8 +6,6 @@ numPattern = 300;
 N = 100;
 matchedPattern1 =[];
 patterns = sign(randn(numPattern,N));
-% Biais
-% p = sign(0.5+randn(P,N));
 
 for i = 1:numPattern
     w = train(patterns(1:i,:));
@@ -24,6 +22,8 @@ for i = 1:numPattern
 end
 subplot(1,2,1);
 plot(1:numPattern, matchedPattern1);
+xlabel('Trained pattern')
+ylabel('Matched %')
 title('Diag not suppressed')
 
 matchedPattern2 =[];
@@ -44,4 +44,6 @@ for i = 1:numPattern
 end
 subplot(1,2,2);
 plot(1:numPattern, matchedPattern2);
+xlabel('Trained pattern')
+ylabel('Matched %')
 title('Diag suppressed')

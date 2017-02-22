@@ -6,7 +6,7 @@ N = 100;
 numPattern = 100;
 theta = 0:0.4:4.5;
 rho = 0.05;
-%bias = .1;
+
 sp=1;
 
 for bias = theta
@@ -33,5 +33,6 @@ end
 subplot(3,4,sp)
 plot(1:numPattern, matchedPattern);
 title(sprintf('Bias=%f',bias));
+ylabel('%Matched')
 sp=sp+1;
 end

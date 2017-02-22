@@ -22,3 +22,5 @@ for i= 1:9
 end
 figure
 plot(1:9,error)
+xlabel('Trained patterns')
+ylabel('error')

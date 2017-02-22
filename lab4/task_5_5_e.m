@@ -23,6 +23,8 @@ for i = 1:numPattern
 end
 subplot(1,2,1);
 plot(1:numPattern, matchedPattern1);
+xlabel('Trained pattern')
+ylabel('Matched %')
 title('Diag not suppressed')
 
 matchedPattern2 =[];
@@ -43,4 +45,6 @@ for i = 1:numPattern
 end
 subplot(1,2,2);
 plot(1:numPattern, matchedPattern2);
+xlabel('Trained pattern')
+ylabel('Matched %')
 title('Diag suppressed')

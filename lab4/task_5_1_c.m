@@ -10,7 +10,6 @@ x = [x1;x2;x3];
 
 w = train(x);
 
-% 4 error
 x1d4=vm([1 1 0 0 1 1 0 1]);
 x1d5=vm([1 1 0 0 1 0 1 1]);
 x2d3=vm([1 1 0 0 1 1 0 0]);
@@ -24,6 +23,7 @@ x3d4=vm([1 1 0 1 0 0 0 1]);
 [x3r4, iter3_4error, error34] = recall_update(w, x3d4, x);
 iter1_4error
 iter1_5error
+iter2_3error
 iter2_4error
 iter3_4error
 

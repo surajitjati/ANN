@@ -11,6 +11,7 @@ fprintf('Energy at p1 = %f\n', - p1 * w * p1');
 fprintf('Energy at p11 = %f\n', - p11 * w * p11');
 fprintf('Energy at p2 = %f\n', - p2 * w * p2');
 fprintf('Energy at p22 = %f\n', - p22 * w * p22');
+fprintf('Energy at p3 = %f\n', - p3 * w * p3');
 
 [p11r, iter11, error11, energy11] = recall_update_energy_allowerror(w, p11, patterns, true);
 subplot(1,2,1);
