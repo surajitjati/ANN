@@ -4,13 +4,12 @@ close all;
 
 N = 100;
 numPattern = 100;
-%theta = 0:0.4:4.5;
-theta = 0:0.1:1;
-rho = 0.1;
+bias = 0.1;
+rhoarr = [0.1 0.05 0.01];
 
 sp=1;
 
-for bias = theta
+for rho = rhoarr
 patterns = zeros(numPattern,N);
 for j = 1:numPattern
     active = randperm(N, N * rho);
@@ -31,9 +30,9 @@ for i = 1:numPattern
     end
     matchedPattern = [matchedPattern matched*100/i];
 end
-subplot(3,4,sp)
+subplot(2,2,sp)
 plot(1:numPattern, matchedPattern);
-title(sprintf('Bias=%f',bias));
+title(sprintf('Rho=%f',rho));
 ylabel('%Matched')
 xlabel('Trained pattern');
 sp=sp+1;
